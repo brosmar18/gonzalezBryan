@@ -51,6 +51,28 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        <div>
+          <img 
+            src={toggle ? close: menu}
+            alt='menu'
+            onClick={() => setToggle(!toggle)}
+          />
+          <div>
+            <ul>
+              {navLinks.map((nav) => (
+                <li
+                  key={nav.id}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    setActive(nav.title)
+                  }}
+                >
+                <a href={`#${nav.id}`}>{nav.title}</a>
+              </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </nav>
   )
