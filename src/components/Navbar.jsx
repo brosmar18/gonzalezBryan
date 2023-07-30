@@ -41,6 +41,16 @@ const Navbar = () => {
             </span>
           </p>
         </Link>
+        <ul>
+          {navLinks.map((nav) => (
+            <li
+              key={nav.id}
+              onClick={() => setActive(nav.title)}
+            >
+              <a href={`#${nav.id}`}>{nav.title}</a>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   )
