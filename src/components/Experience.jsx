@@ -15,7 +15,10 @@ import { textVariant } from "../utils/motion";
 const ExperienceCard = ({experience}) => {
   return (
     <VerticalTimeline 
-
+      contentStyle={{
+        background: "#1d1836",
+        color :"#fff"
+      }}
     />
   )
 }
