@@ -4,10 +4,14 @@ import {motion} from 'framer-motion';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Header = () => {
+
+  const isAboveLarge = MediaQuery("(min-width: 1060px)");
   return (
-    <div>
-      
-    </div>
+    <section id='home' className='md:flex md:justify-between md:items-center gap-16 md:h-full py-10'>
+      <div>
+        
+      </div>
+    </section>
   )
 }
 
