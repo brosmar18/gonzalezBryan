@@ -25,40 +25,58 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav>
-      <div>
+    <nav
+      className={`${
+        styles.paddingX
+      } w-full flex items-center py-5 fixed top-0 z-20 ${
+        scrolled ? "bg-primary" : "bg-transparent"
+      }`}
+    >
+      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link 
-          to="/" onClick={() => {
+          to="/" 
+          className='flex items-center gap-2'
+          onClick={() => {
           setActive("");
           window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' />
-          <p>
+          <img 
+            src={logo} 
+            alt='logo'
+            className='w-9 h-9 object-contain'
+          />
+          <p className='text-white text-[18px] font-bold cursor-pointer flex'>
             Bryan &nbsp;
-            <span>
+            <span className='sm:block hidden'>
               | Garduno Gonzalez
             </span>
           </p>
         </Link>
-        <ul>
+        <ul className='list-hone hidden sm:flex flex-row gap-10'>
           {navLinks.map((nav) => (
             <li
               key={nav.id}
               onClick={() => setActive(nav.title)}
+              className={`${
+                active === nav.title ? "text-white" : "text-secondary"
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
         </ul>
-        <div>
+        <div className='sm:hidden flex flex-1 justify-end items-center'>
           <img 
             src={toggle ? close: menu}
             alt='menu'
             onClick={() => setToggle(!toggle)}
+            className='w-[28px] h-[28px] object-contain'
           />
-          <div>
-            <ul>
+          <div className={`${
+            !toggle ? "hidden" : "flex"
+          } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}>
+            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
@@ -66,6 +84,7 @@ const Navbar = () => {
                     setToggle(!toggle);
                     setActive(nav.title)
                   }}
+                  className={`font-poppins font-medium cursor-pointer text-[16px] ${ active === nav.title ? "text-white" : "text-secondary"}`}
                 >
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
