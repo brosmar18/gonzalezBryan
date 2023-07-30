@@ -34,6 +34,9 @@ const ExperienceCard = ({experience}) => {
     >
       <div>
         <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+        <p className="text-secondary text-[16px] font-semibold">
+          {experience.company_name}
+        </p>
       </div>
     </VerticalTimeline>
   )
