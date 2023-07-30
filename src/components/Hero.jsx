@@ -4,7 +4,7 @@ import {motion} from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section>
+    <section className='relative w-full h-screen mx-auto'>
       <div>
         <div>
           <div />
