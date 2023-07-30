@@ -1,4 +1,4 @@
-import Hero from './Hero';
+import Header from './Header';
 import Navbar from './Navbar';
 import About from './About';
 import Tech from './Tech';
@@ -8,7 +8,7 @@ import Feedback from './Feedback';
 import Contact from './Contact';
 
 export {
-  Hero,
+  Header,
   Navbar,
   About,
   Tech,
