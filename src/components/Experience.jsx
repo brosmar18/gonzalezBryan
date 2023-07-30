@@ -12,6 +12,14 @@ import { experiences } from "../constants";
 import { Wrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
+const ExperienceCard = ({experience}) => {
+  return (
+    <VerticalTimeline 
+
+    />
+  )
+}
+
 
 const Experience = () => {
   return (
@@ -20,6 +28,16 @@ const Experience = () => {
       <p className={`${styles.sectionSubText} text-center`}>Previous Projects</p>
       <h2 className={`${styles.sectionHeadText} text-center`}>Work Experience</h2>
       </motion.div>
+      <div className='mt-20 flex flex-col'>
+        <VerticalTimeline>
+          {experiences.map((experience, index) => (
+            <ExperienceCard
+              key={`experience-${index}`}
+              experience={experience}
+            />
+          ))}
+        </VerticalTimeline>
+      </div>
     </>
   )
 }
