@@ -2,6 +2,7 @@ import React from 'react';
 import MediaQuery from '../hooks/MediaQuery';
 import {motion} from 'framer-motion';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import {styles} from '../styles';
 
 const Header = () => {
 
@@ -16,6 +17,27 @@ const Header = () => {
         ) : (
           <img alt='profile' src="/profile.png" />
         )}
+      </div>
+      <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5}}
+          transition={{duration: 0.5}}
+          variants={{
+            hidden: {opacity: 0, x: -50},
+            visible: {opacity: 1, x: 0},
+          }}
+        >
+          <h1 className={`${styles.heroHeadText} text-white`}>
+            Hi, I'm <span className='text-[#915EFF]'>Bryan</span>
+          </h1>
+          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+            full-stack Software Developer
+          </p>
+        </motion.div>
+        
+
       </div>
     </section>
   )
