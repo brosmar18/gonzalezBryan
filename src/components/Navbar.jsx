@@ -25,9 +25,24 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div>
-      Navbar
-    </div>
+    <nav>
+      <div>
+        <Link 
+          to="/" onClick={() => {
+          setActive("");
+          window.scrollTo(0, 0);
+          }}
+        >
+          <img src={logo} alt='logo' />
+          <p>
+            Bryan &nbsp;
+            <span>
+              | Garduno Gonzalez
+            </span>
+          </p>
+        </Link>
+      </div>
+    </nav>
   )
 }
 
