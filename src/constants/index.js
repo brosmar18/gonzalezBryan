@@ -28,7 +28,7 @@ import {
     jobit,
     tripguide,
     sedgwick,
-    unitypoint
+    unitypoint,
 } from '../assets';
 
 export const navLinks = [
