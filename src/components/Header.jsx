@@ -3,6 +3,7 @@ import MediaQuery from '../hooks/MediaQuery';
 import {motion} from 'framer-motion';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import {styles} from '../styles';
+import SocialsIcons from './SocialsIcons';
 
 const Header = () => {
 
