@@ -9,7 +9,13 @@ const Header = () => {
   return (
     <section id='home' className='md:flex md:justify-between md:items-center gap-16 md:h-full py-10'>
       <div>
-        
+        {isAboveLarge ? (
+          <div>
+            <img alt='profile' src="/profile.png" />
+          </div>
+        ) : (
+          <img alt='profile' src="/profile.png" />
+        )}
       </div>
     </section>
   )
