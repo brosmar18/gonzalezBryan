@@ -8,7 +8,7 @@ const Header = () => {
   const isAboveLarge = MediaQuery("(min-width: 1060px)");
   return (
     <section id='home' className='md:flex md:justify-between md:items-center gap-16 md:h-full py-10'>
-      <div>
+      <div className='basic-3/5 z-10 mt-16 md:mt-32 flex justify-center md:order-2'>
         {isAboveLarge ? (
           <div>
             <img alt='profile' src="/profile.png" />
