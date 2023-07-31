@@ -55,7 +55,7 @@ const ProjectCard = ({
           </p>
         </div>
 
-        <div className="mt-4 flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
