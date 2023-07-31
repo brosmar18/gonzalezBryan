@@ -1,4 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {motion} from 'framer-motion';
+import emailjs from '@emailjs/browser';
+import {styles} from '../styles';
+import {Wrapper} from '../hoc';
 
 const Contact = () => {
   return (
@@ -8,4 +12,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Wrapper(Contact, "contact");
