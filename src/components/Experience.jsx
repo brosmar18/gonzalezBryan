@@ -65,7 +65,7 @@ const Experience = () => {
         className="app__skills-item app__flex"
       >
         <p className={`${styles.sectionSubText} text-center`}>
-          What clients are saying
+          What I've done
         </p>
         <h2 className={`${styles.sectionHeadText} text-center`}>
           Work Experience
