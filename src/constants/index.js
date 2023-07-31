@@ -204,7 +204,7 @@ export const navLinks = [
     {
       testimonial:
         "Coming Soon...",
-      name: "Name",
+      name: "Name 1",
       designation: "position",
       company: "Company Name",
       image: "https://randomuser.me/api/portraits/women/3.jpg",
@@ -212,7 +212,7 @@ export const navLinks = [
     {
       testimonial:
         "Coming soon...",
-      name: "Name",
+      name: "Name 2",
       designation: "Position",
       company: "Company Name",
       image: "https://randomuser.me/api/portraits/men/1.jpg",
@@ -220,7 +220,7 @@ export const navLinks = [
     {
       testimonial:
         "Coming Soon...",
-      name: "Name",
+      name: "Name 3",
       designation: "position",
       company: "Company Name",
       image: "https://randomuser.me/api/portraits/women/8.jpg",
