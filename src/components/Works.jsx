@@ -54,6 +54,14 @@ const ProjectCard = ({
             {description}
           </p>
         </div>
+
+        <div className="mt-4 flex-wrap gap-2">
+          {tags.map((tag) => (
+            <p>
+              #{tag.name}
+            </p>
+          ))}
+        </div>
       </Tilt>
     </motion.div>
   );
