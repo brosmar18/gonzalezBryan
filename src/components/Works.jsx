@@ -1,9 +1,9 @@
 import React from "react";
-import {Tilt} from "react-tilt";
+import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { github } from "../assets";
+import { AiFillGithub, AiFillEye } from 'react-icons/ai';
 import { Wrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -12,7 +12,7 @@ const ProjectCard = ({
   index,
   name,
   description,
-  tags, 
+  tags,
   image,
   source_code_link,
 }) => {
@@ -27,11 +27,25 @@ const ProjectCard = ({
         className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
       >
         <div className="relative w-full h-[230px]">
-          <img 
+          <img
             src={image}
             alt={name}
             className="w-full h-full object-cover rounded-2xl"
           />
+          <div className="absolute inset-0 flex justify-end m-3 card-img_hover gap-1">
+            <div
+              onClick={() => window.open(source_code_link, "_blank")}
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:text-purple-500 transition-colors"
+            >
+              <AiFillGithub />
+            </div>
+            <div
+              onClick={() => window.open(source_code_link, "_blank")}
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:text-purple-500 transition-colors"
+            >
+              <AiFillEye />
+            </div>
+          </div>
         </div>
       </Tilt>
     </motion.div>
@@ -54,7 +68,7 @@ const Works = () => {
           The projects featured here provide a comprehensive representation of my capabilities and experience, serving as tangible demonstrations of my work. Each project comes with a succinct description, alongside links to the corresponding code repositories and live demos. These projects collectively highlight my proficiency in tackling intricate problems, utilizing various technologies, and ensuring effective project management.
         </motion.p>
       </div>
-        <div className='mt-20 flex flex-wrap gap-7'>
+      <div className='mt-20 flex flex-wrap gap-7'>
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
