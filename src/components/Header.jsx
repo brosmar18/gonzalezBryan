@@ -34,7 +34,7 @@ const Header = () => {
             Hi, I'm <span className='text-[#915EFF]'>Bryan</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100 text-center`}>
-            full-stack Software Developer
+            Full-Stack Software Developer
           </p>
         </motion.div>
         <motion.div
