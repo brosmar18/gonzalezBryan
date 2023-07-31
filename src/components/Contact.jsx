@@ -13,7 +13,17 @@ const Contact = () => {
     message: "",
   });
 
+  const handleChange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
 
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
+  
   return (
     <div
       className='xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden'
