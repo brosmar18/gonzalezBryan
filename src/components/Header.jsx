@@ -9,7 +9,7 @@ const Header = () => {
   const isAboveLarge = MediaQuery("(min-width: 1060px)");
 
   return (
-    <section id='home' className="relative w-full h-screen mx-auto md:flex md:justify-between md:items-center gap-16 md:h-full py-10">
+    <section id='home' className="relative w-full h-screen mx-auto md:flex md:justify-center md:items-center md:h-full py-10 justify-center">
       <div className="basis-3/5 z-10 mt-16 md:mt-32 flex justify-center md:order-2">
         {isAboveLarge ? (
           <div>
@@ -50,24 +50,6 @@ const Header = () => {
         >
           <SocialsIcons />
         </motion.div>
-
-      </div>
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-30'>
-        <a href='#about'>
-          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className='w-3 h-3 rounded-full bg-secondary mb-1'
-            />
-          </div>
-        </a>
       </div>
     </section>
   )
