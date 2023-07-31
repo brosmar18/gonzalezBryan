@@ -59,10 +59,19 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
-      <p className={`${styles.sectionSubText} text-center`}>Previous Projects</p>
-      <h2 className={`${styles.sectionHeadText} text-center`}>Work Experience</h2>
+      <motion.div
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
+        className="app__skills-item app__flex"
+      >
+        <p className={`${styles.sectionSubText} text-center`}>
+          What clients are saying
+        </p>
+        <h2 className={`${styles.sectionHeadText} text-center`}>
+          Work Experience
+        </h2>
       </motion.div>
+
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline>
           {experiences.map((experience, index) => (
@@ -74,7 +83,7 @@ const Experience = () => {
         </VerticalTimeline>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Wrapper(Experience, "work");
