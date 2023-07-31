@@ -50,7 +50,7 @@ const About = () => {
         I'm a proficient software developer with a strong foundation in JavaScript, HTML, and CSS, and specialized expertise in frameworks such as React, Node.js, Next.js, and Express. With a knack for quick learning and seamless collaboration, I closely work with clients to develop efficient, scalable, and user-friendly solutions that tackle real-world problems. Let's collaborate and turn your ideas into reality!
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-20 flex justify-center flex-wrap gap-10'>
         {services.map((service, index) => (
           <Card key={service.title} index={index} {...service} />
         ))}
