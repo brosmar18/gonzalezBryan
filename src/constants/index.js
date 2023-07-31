@@ -114,6 +114,11 @@ export const navLinks = [
       name: "docker",
       icon: docker,
     },
+    {
+      name: "Github",
+      icon: github,
+    },
+
   ];
 
   const experiences = [
