@@ -6,6 +6,14 @@ import { Wrapper } from '../hoc';
 import { slideIn } from "../utils/motion";
 
 const Contact = () => {
+  const formRef = useRef();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+
   return (
     <div
       className='xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden'
