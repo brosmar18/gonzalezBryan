@@ -28,7 +28,7 @@ import mercy from "./company/mercy.png";
 import sedgwick from './company/sedgwick.png';
 import unitypoint from './company/unitypoint.png';
 
-import carrent from "./carrent.png";
+import socioRealm from "./socioRealm.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
@@ -60,7 +60,7 @@ export {
   deltav,
   doordash,
   mercy,
-  carrent,
+  socioRealm,
   jobit,
   tripguide,
   sedgwick,

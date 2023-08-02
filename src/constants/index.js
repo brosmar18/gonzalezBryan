@@ -24,11 +24,11 @@ import {
     deltav,
     doordash,
     mercy,
-    carrent,
     jobit,
     tripguide,
     sedgwick,
     unitypoint,
+    socioRealm
 } from '../assets';
 
 export const navLinks = [
@@ -229,9 +229,9 @@ export const navLinks = [
 
   const projects = [
     {
-      name: "Project 1",
+      name: "SocioRealm",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "SocioRealm is a social media app that allows users to connect with their friends, share posts, and much more. This repository contains the frontend part of the application, built with React.",
       tags: [
         {
           name: "react",
@@ -246,8 +246,8 @@ export const navLinks = [
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: socioRealm,
+      source_code_link: "https://github.com/brosmar18/socioRealm-client",
     },
     {
       name: "Project 2",
