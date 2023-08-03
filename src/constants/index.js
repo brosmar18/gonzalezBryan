@@ -24,11 +24,13 @@ import {
     deltav,
     doordash,
     mercy,
-    carrent,
     jobit,
     tripguide,
     sedgwick,
     unitypoint,
+    socioRealm,
+    comingSoon,
+    librarySite
 } from '../assets';
 
 export const navLinks = [
@@ -48,15 +50,15 @@ export const navLinks = [
 
   const services = [
     {
-      title: "Web Developer",
+      title: "FrontEnd Developer",
       icon: web,
     },
     {
-      title: "React Native Developer",
+      title: "Mobile App Developer",
       icon: mobile,
     },
     {
-      title: "Backend Developer",
+      title: "BackEnd Developer",
       icon: backend,
     }
   ];
@@ -229,9 +231,9 @@ export const navLinks = [
 
   const projects = [
     {
-      name: "Project 1",
+      name: "SocioRealm",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "SocioRealm is a social media app that allows users to connect with their friends, share posts, and much more. This repository contains the frontend part of the application, built with React.",
       tags: [
         {
           name: "react",
@@ -246,34 +248,30 @@ export const navLinks = [
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: socioRealm,
+      source_code_link: "https://github.com/brosmar18/socioRealm-client",
     },
     {
-      name: "Project 2",
+      name: "Library Website",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "This is a software development project that showcases a library. The project demonstrates the use of HTML and CSS to create a visually appealing and responsive design.",
       tags: [
         {
-          name: "react",
+          name: "html",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "css",
           color: "green-text-gradient",
         },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/",
+      image: librarySite,
+      source_code_link: "https://github.com/brosmar18/se_project_library",
     },
     {
       name: "Project 3",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Project Description...",
       tags: [
         {
           name: "nextjs",
@@ -288,7 +286,7 @@ export const navLinks = [
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
+      image: comingSoon,
       source_code_link: "https://github.com/",
     },
   ];
