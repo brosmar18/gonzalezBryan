@@ -31,6 +31,8 @@ import unitypoint from './company/unitypoint.png';
 import socioRealm from "./socioRealm.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import comingSoon from "./comingSoon.png";
+import librarySite from "./librarySite.png";
 
 
 
@@ -65,5 +67,6 @@ export {
   tripguide,
   sedgwick,
   unitypoint,
-
+  comingSoon,
+  librarySite
 };

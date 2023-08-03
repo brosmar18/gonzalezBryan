@@ -28,7 +28,9 @@ import {
     tripguide,
     sedgwick,
     unitypoint,
-    socioRealm
+    socioRealm,
+    comingSoon,
+    librarySite
 } from '../assets';
 
 export const navLinks = [
@@ -250,30 +252,26 @@ export const navLinks = [
       source_code_link: "https://github.com/brosmar18/socioRealm-client",
     },
     {
-      name: "Project 2",
+      name: "Library Website",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "This is a software development project that showcases a library. The project demonstrates the use of HTML and CSS to create a visually appealing and responsive design.",
       tags: [
         {
-          name: "react",
+          name: "html",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "css",
           color: "green-text-gradient",
         },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/",
+      image: librarySite,
+      source_code_link: "https://github.com/brosmar18/se_project_library",
     },
     {
       name: "Project 3",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Project Description...",
       tags: [
         {
           name: "nextjs",
@@ -288,7 +286,7 @@ export const navLinks = [
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
+      image: comingSoon,
       source_code_link: "https://github.com/",
     },
   ];
