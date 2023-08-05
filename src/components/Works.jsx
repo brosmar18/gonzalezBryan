@@ -90,7 +90,9 @@ const filteredProjects = selectedTag === 'All' ? projects : projects.filter(proj
       <div className="w-full flex justify-center flex-wrap">
         {uniqueTags.map((tag) => (
           <button
-            
+            key={tag}
+            onClick={() => setSelectedTag(tag)}
+            className={`m-2 py-1 px-3 rounded-full ${selectedTag === tag ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'} transition-colors duration-300`}
           >
             {tag}
           </button>
