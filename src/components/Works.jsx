@@ -71,9 +71,9 @@ const ProjectCard = ({
 };
 
 const Works = () => {
-const [selectedTag, setSelectedTag] = useState('All');
-const uniqueTags = ['All', ...new Set(projects.flatMap(projects => projects.tags.map(tag => tag.name)))];
-const filteredProjects = selectedTag === 'All' ? projects : projects.filter(project => project.tags.some(tag => tag.name === selectedTag));
+  const [selectedTag, setSelectedTag] = useState('All');
+  const uniqueTags = ['All', ...new Set(projects.flatMap(projects => projects.tags.map(tag => tag.name)))];
+  const filteredProjects = selectedTag === 'All' ? projects : projects.filter(project => project.tags.some(tag => tag.name === selectedTag));
 
 
   return (
@@ -86,8 +86,17 @@ const filteredProjects = selectedTag === 'All' ? projects : projects.filter(proj
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects</h2>
       </motion.div>
-      
-      <div className="w-full flex justify-center flex-wrap">
+
+      <div className='w-full flex'>
+        <motion.p
+          variants={fadeIn("", "", 0.1, 1)}
+          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        >
+          The projects featured here provide a comprehensive representation of my capabilities and experience, serving as tangible demonstrations of my work. Each project comes with a succinct description, alongside links to the corresponding code repositories and live demos. These projects collectively highlight my proficiency in tackling intricate problems, utilizing various technologies, and ensuring effective project management.
+        </motion.p>
+      </div>
+
+      <div className="w-full flex justify-center flex-wrap mt-10">
         {uniqueTags.map((tag) => (
           <button
             key={tag}
@@ -97,15 +106,6 @@ const filteredProjects = selectedTag === 'All' ? projects : projects.filter(proj
             {tag}
           </button>
         ))}
-      </div>
-
-      <div className='w-full flex'>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
-        >
-          The projects featured here provide a comprehensive representation of my capabilities and experience, serving as tangible demonstrations of my work. Each project comes with a succinct description, alongside links to the corresponding code repositories and live demos. These projects collectively highlight my proficiency in tackling intricate problems, utilizing various technologies, and ensuring effective project management.
-        </motion.p>
       </div>
 
       <div className='mt-20 flex flex-wrap gap-7'>
