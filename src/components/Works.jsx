@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { styles } from "../styles";
 import { Wrapper } from "../hoc";
 import { projects } from "../constants";
@@ -113,12 +113,14 @@ const Works = () => {
       </div>
 
       <div className='mt-20 flex flex-wrap gap-7'>
-        {filteredProjects.map((project, index) => (
-          <ProjectCard 
-            key={project.name}
-            {...project}
-          />
-        ))}
+          <AnimatePresence>
+            {filteredProjects.map((project, index) => (
+              <ProjectCard 
+                key={project.name}
+                {...project}
+              />
+            ))}
+          </AnimatePresence>
       </div>
     </>
   );
