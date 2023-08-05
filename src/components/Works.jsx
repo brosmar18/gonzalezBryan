@@ -8,7 +8,6 @@ import { fadeIn } from "../utils/motion";
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
 const ProjectCard = ({
-  index,
   name,
   description,
   tags,
@@ -17,7 +16,12 @@ const ProjectCard = ({
 }) => {
 
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      initial={{ opacity: 0, y: 50}}
+      animate={{ opacity: 1, y: 0}}
+      exit={{ opacity: 0, y: 0}}
+      transition={{ duration: 0.3}}
+    >
       <Tilt
         options={{
           max: 45,
@@ -111,8 +115,7 @@ const Works = () => {
       <div className='mt-20 flex flex-wrap gap-7'>
         {filteredProjects.map((project, index) => (
           <ProjectCard 
-            key={`project-${index}`}
-            index={index}
+            key={project.name}
             {...project}
           />
         ))}
