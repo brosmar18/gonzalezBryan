@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { styles } from "../styles";
 import { Wrapper } from "../hoc";
 import { projects } from "../constants";
@@ -8,15 +8,20 @@ import { fadeIn } from "../utils/motion";
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
 const ProjectCard = ({
-  index,
   name,
   description,
   tags,
   image,
   source_code_link,
 }) => {
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      initial={{ opacity: 0, y: 50}}
+      animate={{ opacity: 1, y: 0}}
+      exit={{ opacity: 0, y: 0}}
+      transition={{ duration: 0.3}}
+    >
       <Tilt
         options={{
           max: 45,
@@ -70,6 +75,11 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const [selectedTag, setSelectedTag] = useState('All');
+  const uniqueTags = ['All', ...new Set(projects.flatMap(projects => projects.tags.map(tag => tag.name)))];
+  const filteredProjects = selectedTag === 'All' ? projects : projects.filter(project => project.tags.some(tag => tag.name === selectedTag));
+
+
   return (
     <>
       <motion.div
@@ -90,10 +100,27 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className='mt-20 flex flex-wrap gap-7'>
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+      <div className="w-full flex justify-center flex-wrap mt-10">
+        {uniqueTags.map((tag) => (
+          <button
+            key={tag}
+            onClick={() => setSelectedTag(tag)}
+            className={`m-2 py-1 px-3 rounded-full ${selectedTag === tag ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'} transition-colors duration-300`}
+          >
+            {tag}
+          </button>
         ))}
+      </div>
+
+      <div className='mt-20 flex flex-wrap gap-7'>
+          <AnimatePresence>
+            {filteredProjects.map((project, index) => (
+              <ProjectCard 
+                key={project.name}
+                {...project}
+              />
+            ))}
+          </AnimatePresence>
       </div>
     </>
   );
