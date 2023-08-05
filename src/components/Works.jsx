@@ -86,6 +86,16 @@ const filteredProjects = selectedTag === 'All' ? projects : projects.filter(proj
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects</h2>
       </motion.div>
+      
+      <div className="w-full flex justify-center flex-wrap">
+        {uniqueTags.map((tag) => (
+          <button
+            
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
 
       <div className='w-full flex'>
         <motion.p
