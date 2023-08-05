@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
@@ -15,12 +15,7 @@ const ProjectCard = ({
   image,
   source_code_link,
 }) => {
-  const [activeFilter, setActiveFilter] = useState('All');
-  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 })
-  const [works, setWorks] = useState([]);
-  const [filterWork, setFilterWork] = useState([])
 
-  
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -76,6 +71,11 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+const [selectedTag, setSelectedTag] = useState('All');
+const uniqueTags = ['All', ...new Set(projects.flatMap(projects => projects.tags.map(tag => tag.name)))];
+const filteredProjects = selectedTag === 'All' ? projects : projects.filter(project => project.tags.some(tag => tag.name === selectedTag));
+
+
   return (
     <>
       <motion.div
