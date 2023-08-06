@@ -30,7 +30,8 @@ import {
     unitypoint,
     socioRealm,
     comingSoon,
-    librarySite
+    librarySite,
+    eCommerce
 } from '../assets';
 
 export const navLinks = [
@@ -269,25 +270,25 @@ export const navLinks = [
       source_code_link: "https://github.com/brosmar18/se_project_library",
     },
     {
-      name: "Project 3",
+      name: "E-Commerce Website with Stripe",
       description:
-        "Project Description...",
+        "Ecommerce Store's client-side application built with React and other modern web technologies. This project is a web storefront that showcases products, provides product details, and facilitates the checkout process.",
       tags: [
         {
-          name: "nextjs",
+          name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "stripe",
           color: "green-text-gradient",
         },
         {
-          name: "css",
-          color: "pink-text-gradient",
+          name: "materialUI",
+          color: "blue-text-gradient",
         },
       ],
-      image: comingSoon,
-      source_code_link: "https://github.com/",
+      image: eCommerce,
+      source_code_link: "https://github.com/brosmar18/ecommerce-client",
     },
   ];
 

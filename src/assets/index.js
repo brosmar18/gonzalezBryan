@@ -33,6 +33,7 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import comingSoon from "./comingSoon.png";
 import librarySite from "./librarySite.png";
+import eCommerce from "./eCommerce.png";
 
 
 
@@ -68,5 +69,6 @@ export {
   sedgwick,
   unitypoint,
   comingSoon,
-  librarySite
+  librarySite,
+  eCommerce
 };
