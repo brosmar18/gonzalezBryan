@@ -80,6 +80,17 @@ const ProjectCard = ({
 
 const Projects = () => {
     const [projects, setProjects] = useState([]);
+    const [selectedTechnology, setSelectedTechnology] = useState('All');
+
+    // generate a list of unique technologies
+    const uniqueTechnologies = ['All', ...new Set(projects.flatMap(project => project.attributes.project_technologies.data.map(tech => tech.attributes.name)))];
+
+    // filter projects based on selected tech
+    const filteredProjects = selectedTechnology === 'All' ? projects : projects.filter(project => project.attributes.project_technologies.data.some(tech => tech.attributes.name === selectedTechnology));
+
+
+
+
 
     async function getProjects() {
         try {
@@ -118,6 +129,13 @@ const Projects = () => {
                 >
                     The projects featured here provide a comprehensive representation of my capabilities and experience, serving as tangible demonstrations of my work. Each project comes with a succinct description, alongside links to the corresponding code repositories and live demos. These projects collectively highlight my proficiency in tackling intricate problems, utilizing various technologies, and ensuring effective project management.
                 </motion.p>
+            </div>
+            <div className='w-full flex justify-center flex-wrap mt-10'>
+                {uniqueTechnologies.map((tech) => (
+                    <button>
+                        {tech}
+                    </button>
+                ))}
             </div>
             <div className='mt-20 flex flex-wrap gap-7'>
                 <AnimatePresence>
