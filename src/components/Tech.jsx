@@ -7,7 +7,7 @@ const Tech = () => {
 
   async function getTechnologies() {
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/technologies?populate=image`, { method: "GET" });
+      const response = await fetch(`https://gonzalezbryan-server.onrender.com/api/technologies?populate=image`, { method: "GET" });
       const data = await response.json();
       setTechnologies(data.data);
     } catch (e) {

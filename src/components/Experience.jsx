@@ -56,7 +56,7 @@ const Experience = () => {
 
   async function getExperiences() {
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/experiences?populate=image`, { method: "GET" });
+      const response = await fetch(`https://gonzalezbryan-server.onrender.com/api/experiences?populate=image`, { method: "GET" });
 
       const data = await response.json();
 
