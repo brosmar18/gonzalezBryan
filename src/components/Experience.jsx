@@ -12,14 +12,30 @@ const ExperienceCard = ({ experience }) => {
   const description = experience.attributes?.description;
 
   return (
-   
+    <VerticalTimelineElement
+      contentStyle={{ background: "#1d1836", color: "#fff" }}
+      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      date={`${experience.attributes?.startingDate} - ${experience.attributes?.endDate}`}
+      iconStyle={{ background: '#383E56' }}
+      icon={
+        <div className='flex justify-center items-center w-full h-full'>
+          <img
+            src={imageUrl}
+            alt={companyName}
+            className='w-[60%] h-[60%] object-contain'
+          />
+        </div>
+      }
+    >
+
+    </VerticalTimelineElement>
   );
 };
 
 const Experience = () => {
   return (
     <>
-      
+
     </>
   );
 };
