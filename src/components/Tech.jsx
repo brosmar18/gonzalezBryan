@@ -15,12 +15,11 @@ const Tech = () => {
         return (
           <div className='w-28 h-28' key={technology.attributes.name}>
             <BallCanvas icon={imageUrl} />
-            <DeskCanvas />
           </div>
         );
       })}
+      <DeskCanvas />
     </div>
-
   );
 };
 
