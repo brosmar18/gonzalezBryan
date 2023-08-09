@@ -10,7 +10,8 @@ const ProjectCard = ({
     name,
     desc,
     image,
-    gitHubLink
+    gitHubLink,
+    liveLink
 }) => {
     return (
         <motion.div
@@ -40,6 +41,12 @@ const ProjectCard = ({
                             className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:text-purple-500 transition-colors"
                         >
                             <AiFillGithub />
+                        </div>
+                        <div
+                            onClick={() => window.open(liveLink, "_blank")}
+                            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:text-purple-500 transition-colors"
+                        >
+                            <AiFillEye />
                         </div>
                     </div>
                 </div>
@@ -100,6 +107,7 @@ const Projects = () => {
                                 description={project.attributes.desc}
                                 image={imageUrl}
                                 gitHubLink={project.attributes.gitHubLink}
+                                liveLink={project.attributes.liveLink}
                             />
                         );
                     })}
