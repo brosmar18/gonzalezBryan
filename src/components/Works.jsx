@@ -88,7 +88,7 @@ const Works = () => {
         className="app__skills-item app__flex"
       >
         <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects</h2>
+        <h2 className={`${styles.sectionHeadText}`}>Works</h2>
       </motion.div>
 
       <div className='w-full flex'>
