@@ -12,10 +12,14 @@ const ProjectCard = ({
     image,
     gitHubLink,
     liveLink,
-    // techUsed
+    project_technologies
 }) => {
 
-    // const technologies = techUsed.split('-').map(tech => tech.trim()).filter(Boolean);
+    // Extract tech names and their corresponding color styles
+    const technologies = project_technologies.map(tech => ({
+        name: tech.attributes.name,
+        color: tech.attributes.color
+    }));
 
     return (
         <motion.div
@@ -59,14 +63,14 @@ const ProjectCard = ({
                     <p className='mt-2 text-secondary text-[14px]'>{desc}</p>
                 </div>
                 <div className='mt-4 flex flex-wrap gap-2'>
-                    {/* {technologies.map((tech, index) => (
-                    <p
-                        key={`${name}-${tech}-${index}`}
-                        className="text-[14px]"
-                    >
-                        #{tech}
-                    </p>
-                ))} */}
+                    {technologies.map((tech, index) => (
+                        <p
+                            key={`${name}-${tech.name}-${index}`}
+                            className={`text-[14px] ${tech.color}`}
+                        >
+                            #{tech.name}
+                        </p>
+                    ))}
                 </div>
             </Tilt>
         </motion.div>
@@ -128,7 +132,7 @@ const Projects = () => {
                                 image={imageUrl}
                                 gitHubLink={project.attributes.gitHubLink}
                                 liveLink={project.attributes.liveLink}
-                                techUsed={project.attributes.techUsed}
+                                project_technologies={project.attributes.project_technologies.data}
                             />
                         );
                     })}
