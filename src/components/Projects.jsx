@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Tilt } from "react-tilt";
+
+
 import { styles } from '../styles';
 import { Wrapper } from '../hoc';
 import { fadeIn } from '../utils/motion';
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
+ai';
 import { BsFilterSquare } from 'react-icons/bs';
 
 
