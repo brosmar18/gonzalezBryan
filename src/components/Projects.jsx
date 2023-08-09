@@ -156,7 +156,7 @@ const Projects = () => {
                         <button
                             key={tech}
                             onClick={() => setSelectedTechnology(tech)}
-                            className={`m-2 py-1 px-3 rounded-full ${selectedTechnology === tech ? 'text-white ' + techColor : 'bg-gray-200 text-black'} transition-colors duration-300`}
+                            className={`m-2 py-1 px-3 rounded-full ${isSelected ? (tech === 'All' ? 'bg-gray-800 text-white' : 'text-white ' + techColor) : 'bg-gray-200 text-black'} transition-colors duration-300`}
                         >
                             {tech}
                         </button>
