@@ -140,14 +140,14 @@ const Projects = () => {
                     The projects featured here provide a comprehensive representation of my capabilities and experience, serving as tangible demonstrations of my work. Each project comes with a succinct description, alongside links to the corresponding code repositories and live demos. These projects collectively highlight my proficiency in tackling intricate problems, utilizing various technologies, and ensuring effective project management.
                 </motion.p>
             </div>
-            <div className="flex justify-center mt-10">
+            <div className="flex justify-end mt-10">
                 <button
                     onClick={() => setShowFilters(!showFilters)}
                     aria-expanded={showFilters}
                     className="flex items-center py-1 px-3 bg-gray-200 text-black rounded-full transition-transform transform duration-300 ease-out hover:bg-gray-800 hover:text-white"
                 >
-                    <BsFilterSquare className="mr-2" size={24} /> 
-                    Filter
+                    <BsFilterSquare className="mr-2" size={24} />
+                    {showFilters ? "Close" : "Filter"}
                 </button>
             </div>
 
@@ -155,7 +155,7 @@ const Projects = () => {
 
 
             {showFilters && (
-                <div className={`filter-options ${showFilters ? 'open' : ''}`}>
+                <div className={`filter-options ${showFilters ? 'open' : ''} mt-5`}>
                     {uniqueTechnologies.map((tech) => {
                         const isSelected = selectedTechnology === tech;
                         const buttonBaseClasses = 'm-2 py-1 px-3 rounded-full transition-transform transform duration-300 ease-out';
