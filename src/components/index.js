@@ -15,5 +15,5 @@ export {
   Experience,
   Works,
   Feedback,
-  Contact
+  Contact,
 }
