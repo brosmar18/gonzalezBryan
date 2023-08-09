@@ -5,6 +5,7 @@ import { styles } from '../styles';
 import { Wrapper } from '../hoc';
 import { fadeIn } from '../utils/motion';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
+import { BsFilterSquare } from 'react-icons/bs';
 
 const ProjectCard = ({
     name,
@@ -139,9 +140,18 @@ const Projects = () => {
                     The projects featured here provide a comprehensive representation of my capabilities and experience, serving as tangible demonstrations of my work. Each project comes with a succinct description, alongside links to the corresponding code repositories and live demos. These projects collectively highlight my proficiency in tackling intricate problems, utilizing various technologies, and ensuring effective project management.
                 </motion.p>
             </div>
-            <button onClick={() => setShowFilters(!showFilters)} aria-expanded={showFilters}>
-                Filter by
-            </button>
+            <div className="flex justify-center mt-10">
+                <button
+                    onClick={() => setShowFilters(!showFilters)}
+                    aria-expanded={showFilters}
+                    className="flex items-center py-1 px-3 bg-gray-200 text-black rounded-full transition-transform transform duration-300 ease-out hover:bg-gray-800 hover:text-white"
+                >
+                    <BsFilterSquare className="mr-2" size={24} /> 
+                    Filter
+                </button>
+            </div>
+
+
 
 
             {showFilters && (
