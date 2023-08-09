@@ -1,14 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Tilt } from "react-tilt";
 import { styles } from '../styles';
 import { Wrapper } from '../hoc';
 import { fadeIn } from '../utils/motion';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
-const ProjectCard = () => {
+const ProjectCard = ({
+    name,
+    desc,
+    image,
+    gitHubLink
+}) => {
     return (
-        <motion.div>
-            <h1>Project Card</h1>
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 0 }}
+            transition={{ duration: 0.3 }}
+        >
+            <Tilt
+                options={{
+                    max: 45,
+                    scale: 1,
+                    speed: 450,
+                }}
+                className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+            >
+                <div className='relative w-full h-[230px]'>
+                    <img
+                        src={image}
+                        alt='project_image'
+                        className='w-full h-full object-cover rounded-2xl'
+                    />
+                </div>
+            </Tilt>
         </motion.div>
     )
 }
@@ -54,7 +80,20 @@ const Projects = () => {
             </div>
             <div className='mt-20 flex flex-wrap gap-7'>
                 <AnimatePresence>
-                    <ProjectCard />
+                    {projects.map(project => {
+                        const imageUrl = project.attributes.image.data[0].attributes.url
+
+                        console.log('Image URL:', imageUrl); 
+                        return (
+                            <ProjectCard
+                                key={project.attributes.name}
+                                name={project.attributes.name}
+                                description={project.attributes.desc}
+                                image={imageUrl}
+                                gitHubLink={project.attributes.gitHubLink}
+                            />
+                        );
+                    })}
                 </AnimatePresence>
             </div>
 
