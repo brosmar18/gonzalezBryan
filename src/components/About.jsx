@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { Wrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import { DeskCanvas } from "./canvas";
 
 const Card = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
@@ -54,6 +55,9 @@ const About = () => {
         {services.map((service, index) => (
           <Card key={service.title} index={index} {...service} />
         ))}
+      </div>
+      <div className="w-full h-screen mx-auto">
+        <DeskCanvas />
       </div>
     </>
   );

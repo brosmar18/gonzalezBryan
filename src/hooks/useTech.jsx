@@ -5,7 +5,7 @@ const useTech = () => {
 
   async function getTechnologies() {
     try {
-      const response = await fetch(`https://gonzalezbryan-server.onrender.com/api/technologies?populate=image`, { method: "GET" });
+      const response = await fetch(`http://localhost:1337/api/technologies?populate=image`, { method: "GET" });
       const data = await response.json();
       setTechnologies(data.data);
     } catch (e) {
