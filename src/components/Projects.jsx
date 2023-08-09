@@ -83,7 +83,7 @@ const ProjectCard = ({
 
 
 const Projects = () => {
-    const [projects, setProjects] = useState([]);
+
     const [selectedTechnology, setSelectedTechnology] = useState('All');
     const [showFilters, setShowFilters] = useState(false);
 
@@ -101,24 +101,6 @@ const Projects = () => {
 
 
 
-    async function getProjects() {
-        try {
-
-            const response = await fetch('http://localhost:1337/api/projects?populate[image]=true&populate[project_technologies]=true', { method: "GET" });
-
-            const data = await response.json();
-
-
-            setProjects(data.data);
-        } catch (e) {
-            console.log("Error fetching projects", e);
-        }
-    }
-
-
-    useEffect(() => {
-        getProjects();
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 
 
