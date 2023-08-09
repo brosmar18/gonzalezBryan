@@ -132,6 +132,10 @@ const Projects = () => {
             </div>
             <div className="w-full flex justify-center flex-wrap mt-10">
                 {uniqueTechnologies.map((tech) => {
+                    const isSelected = selectedTechnology === tech;
+                    const buttonBaseClasses = 'm-2 py-1 px-3 rounded-full transition-transform transform duration-300 ease-out';
+
+
                     // Find the project with the current tech
                     const projectWithTech = projects.find(proj => proj.attributes.project_technologies.data.some(technology => technology.attributes.name === tech));
 
@@ -153,7 +157,6 @@ const Projects = () => {
                 })}
 
             </div>
-
 
             <div className='mt-20 flex flex-wrap gap-7'>
                 <AnimatePresence>
