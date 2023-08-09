@@ -14,6 +14,9 @@ const ProjectCard = ({
     liveLink,
     techUsed
 }) => {
+
+    const technologies = techUsed.split('-').map(tech => tech.trim()).filter(Boolean);
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -55,8 +58,15 @@ const ProjectCard = ({
                     <h3 className='text-white font-bold text-[24px]'>{name}</h3>
                     <p className='mt-2 text-secondary text-[14px]'>{desc}</p>
                 </div>
-                <div>
-                    {techUsed}
+                <div className='mt-4 flex flex-wrap gap-2'>
+                {technologies.map((tech, index) => (
+                    <p
+                        key={`${name}-${tech}-${index}`}
+                        className="text-[14px]"
+                    >
+                        #{tech}
+                    </p>
+                ))}
                 </div>
             </Tilt>
         </motion.div>
