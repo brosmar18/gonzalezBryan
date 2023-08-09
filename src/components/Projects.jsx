@@ -33,6 +33,15 @@ const ProjectCard = ({
                         alt='project_image'
                         className='w-full h-full object-cover rounded-2xl'
                     />
+
+                    <div className='absolute inset-0 flex justify-end m-3 gap-1 card-img_hover'>
+                        <div
+                            onClick={() => window.open(gitHubLink, '_blank')}
+                            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:text-purple-500 transition-colors"
+                        >
+                            <AiFillGithub />
+                        </div>
+                    </div>
                 </div>
             </Tilt>
         </motion.div>
@@ -83,7 +92,7 @@ const Projects = () => {
                     {projects.map(project => {
                         const imageUrl = project.attributes.image.data[0].attributes.url
 
-                        console.log('Image URL:', imageUrl); 
+                        console.log('Image URL:', imageUrl);
                         return (
                             <ProjectCard
                                 key={project.attributes.name}
