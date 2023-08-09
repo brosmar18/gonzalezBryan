@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import {About, Contact, Experience, Navbar, Feedback, Header, Tech, Works} from './components';
+import {About, Contact, Experience, Navbar, Feedback, Header, Tech, Works, JobExperience} from './components';
 
 const App = () => {
 
@@ -12,6 +12,7 @@ const App = () => {
           <Header />
         </div>
         <About />
+        <JobExperience />
         <Experience />
         <Tech />
         <Works />

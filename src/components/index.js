@@ -6,6 +6,7 @@ import Experience from './Experience';
 import Works from './Works';
 import Feedback from './Feedback';
 import Contact from './Contact';
+import JobExperience from './JobExperience';
 
 export {
   Header,
@@ -15,5 +16,6 @@ export {
   Experience,
   Works,
   Feedback,
-  Contact
+  Contact,
+  JobExperience
 }
