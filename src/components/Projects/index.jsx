@@ -4,6 +4,8 @@ import { Wrapper } from '../../hoc';
 import ProjectCard from './ProjectCard';
 import Filters from './Filters';
 import useProjects from '../../hooks/useProjects';
+import { fadeIn } from '../../utils/motion';
+import { styles } from '../../styles';
 
 const Projects = () => {
     const projects = useProjects();
@@ -23,8 +25,8 @@ const Projects = () => {
                 transition={{ duration: 0.5 }}
                 className="app__skills-item app__flex"
             >
-                <p className={`sectionSubText`}>My work</p>
-                <h2 className={`sectionHeadText`}>Projects</h2>
+                <p className={styles.heroSubText}>My work</p>
+                <h2 className={styles.heroHeadText}>Projects</h2>
             </motion.div>
             <div className='w-full flex'>
                 <motion.p
@@ -41,6 +43,7 @@ const Projects = () => {
                 selectedTechnology={selectedTechnology}
                 showFilters={showFilters}
                 setShowFilters={setShowFilters}
+                projects={projects}
             />
 
             <div className='mt-20 flex flex-wrap gap-7'>

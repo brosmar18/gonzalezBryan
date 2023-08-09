@@ -1,7 +1,8 @@
 import React from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Tilt } from "react-tilt";
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
+
 
 const ProjectCard = ({
     name,

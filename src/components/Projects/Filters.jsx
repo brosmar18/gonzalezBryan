@@ -6,7 +6,8 @@ const Filters = ({
     setSelectedTechnology, 
     selectedTechnology, 
     showFilters, 
-    setShowFilters 
+    setShowFilters,
+    projects
 }) => {
 
     return (
