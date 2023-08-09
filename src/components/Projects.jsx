@@ -50,6 +50,10 @@ const ProjectCard = ({
                         </div>
                     </div>
                 </div>
+                <div className='mt-5'>
+                    <h3 className='text-white font-bold text-[24px]'>{name}</h3>
+                    <p className='mt-2 text-secondary text-[14px]'>{desc}</p>
+                </div>
             </Tilt>
         </motion.div>
     )
@@ -104,7 +108,7 @@ const Projects = () => {
                             <ProjectCard
                                 key={project.attributes.name}
                                 name={project.attributes.name}
-                                description={project.attributes.desc}
+                                desc={project.attributes.desc}
                                 image={imageUrl}
                                 gitHubLink={project.attributes.gitHubLink}
                                 liveLink={project.attributes.liveLink}
