@@ -169,7 +169,6 @@ const Projects = () => {
                 <AnimatePresence>
                     {/* Use filteredProjects here instead of projects */}
                     {filteredProjects.map(project => {
-                        console.log(`Technologies for project: ${project.attributes.name}`, project.attributes.project_technologies.data);
                         const imageUrl = project.attributes.image.data[0].attributes.url;
 
                         return (
