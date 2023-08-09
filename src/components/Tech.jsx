@@ -1,23 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { BallCanvas } from "./canvas";
 import { Wrapper } from "../hoc";
+import useTech from '../hooks/useTech';
 
 const Tech = () => {
-  const [technologies, setTechnologies] = useState([]);
-
-  async function getTechnologies() {
-    try {
-      const response = await fetch(`https://gonzalezbryan-server.onrender.com/api/technologies?populate=image`, { method: "GET" });
-      const data = await response.json();
-      setTechnologies(data.data);
-    } catch (e) {
-      console.log("Error fetching technologies:", e);
-    }
-  }
-
-  useEffect(() => {
-    getTechnologies();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const technologies = useTech();
 
   return (
     <div className='flex flex-row flex-wrap justify-center gap-10'>
