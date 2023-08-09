@@ -11,6 +11,9 @@ const ExperienceCard = ({ experience }) => {
   const title = experience.attributes?.title;
   const description = experience.attributes?.description;
 
+  // parse description into an array of points
+  const points = description.split('\n').map(point => point.replace('-', '').trim());
+
   return (
     <VerticalTimelineElement
       contentStyle={{ background: "#1d1836", color: "#fff" }}
