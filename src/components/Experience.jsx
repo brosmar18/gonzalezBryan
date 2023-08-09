@@ -42,9 +42,49 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  const [experiences, setExperiences] = useState([]);
+
+  async function getExperiences() {
+    try {
+      const response = await fetch('http://localhost:1337/api/experiences?populate=image', { method: "GET" });
+      const data = await response.json();
+      setExperiences(data.data);
+      console.log(data.data)
+    } catch (error) {
+      console.log("Error fetching experiences", error);
+    }
+  }
+
+  useEffect(() => {
+    getExperiences();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+
   return (
     <>
+      <motion.div
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
+        className="app__skills-item app__flex"
+      >
+        <p className={`${styles.sectionSubText} text-center`}>
+          What I've done
+        </p>
+        <h2 className={`${styles.sectionHeadText} text-center`}>
+          Job Experience
+        </h2>
+      </motion.div>
 
+      <div className='mt-20 flex flex-col'>
+        <VerticalTimeline>
+          {experiences.map((experience, index) => (
+            <ExperienceCard
+              key={`job-experience-${index}`}
+              experience={experience}
+            />
+          ))}
+        </VerticalTimeline>
+      </div>
     </>
   );
 };
