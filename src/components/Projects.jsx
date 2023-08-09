@@ -12,10 +12,10 @@ const ProjectCard = ({
     image,
     gitHubLink,
     liveLink,
-    techUsed
+    // techUsed
 }) => {
 
-    const technologies = techUsed.split('-').map(tech => tech.trim()).filter(Boolean);
+    // const technologies = techUsed.split('-').map(tech => tech.trim()).filter(Boolean);
 
     return (
         <motion.div
@@ -59,14 +59,14 @@ const ProjectCard = ({
                     <p className='mt-2 text-secondary text-[14px]'>{desc}</p>
                 </div>
                 <div className='mt-4 flex flex-wrap gap-2'>
-                {technologies.map((tech, index) => (
+                    {/* {technologies.map((tech, index) => (
                     <p
                         key={`${name}-${tech}-${index}`}
                         className="text-[14px]"
                     >
                         #{tech}
                     </p>
-                ))}
+                ))} */}
                 </div>
             </Tilt>
         </motion.div>
@@ -79,7 +79,8 @@ const Projects = () => {
 
     async function getProjects() {
         try {
-            const response = await fetch('http://localhost:1337/api/projects?populate=image', { method: "GET" });
+            const response = await fetch('http://localhost:1337/api/projects?populate[image]=true&populate[project_technologies]=true', { method: "GET" });
+
             const data = await response.json();
 
             setProjects(data.data);
@@ -92,6 +93,8 @@ const Projects = () => {
     useEffect(() => {
         getProjects();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+
 
 
     return (
@@ -117,7 +120,6 @@ const Projects = () => {
                     {projects.map(project => {
                         const imageUrl = project.attributes.image.data[0].attributes.url
 
-                        console.log('Image URL:', imageUrl);
                         return (
                             <ProjectCard
                                 key={project.attributes.name}
