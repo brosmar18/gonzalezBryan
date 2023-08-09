@@ -84,6 +84,8 @@ const ProjectCard = ({
 const Projects = () => {
     const [projects, setProjects] = useState([]);
     const [selectedTechnology, setSelectedTechnology] = useState('All');
+    const [showFilters, setShowFilters] = useState(false);
+
 
 
     // generate a list of unique technologies
@@ -137,33 +139,39 @@ const Projects = () => {
                     The projects featured here provide a comprehensive representation of my capabilities and experience, serving as tangible demonstrations of my work. Each project comes with a succinct description, alongside links to the corresponding code repositories and live demos. These projects collectively highlight my proficiency in tackling intricate problems, utilizing various technologies, and ensuring effective project management.
                 </motion.p>
             </div>
-            <div className="w-full flex justify-center flex-wrap mt-10">
-                {uniqueTechnologies.map((tech) => {
-                    const isSelected = selectedTechnology === tech;
-                    const buttonBaseClasses = 'm-2 py-1 px-3 rounded-full transition-transform transform duration-300 ease-out';
+            <button onClick={() => setShowFilters(!showFilters)} aria-expanded={showFilters}>
+                Filter by
+            </button>
 
 
-                    // Find the project with the current tech
-                    const projectWithTech = projects.find(proj => proj.attributes.project_technologies.data.some(technology => technology.attributes.name === tech));
+            {showFilters && (
+                <div className={`filter-options ${showFilters ? 'open' : ''}`}>
+                    {uniqueTechnologies.map((tech) => {
+                        const isSelected = selectedTechnology === tech;
+                        const buttonBaseClasses = 'm-2 py-1 px-3 rounded-full transition-transform transform duration-300 ease-out';
 
-                    // If found, get the tech data
-                    const techData = projectWithTech ? projectWithTech.attributes.project_technologies.data.find(technology => technology.attributes.name === tech) : null;
 
-                    // If tech data is found, get the color, else set a default color
-                    const techColor = techData ? techData.attributes.color : 'bg-gray-200 text-black';
+                        // Find the project with the current tech
+                        const projectWithTech = projects.find(proj => proj.attributes.project_technologies.data.some(technology => technology.attributes.name === tech));
 
-                    return (
-                        <button
-                            key={tech}
-                            onClick={() => setSelectedTechnology(tech)}
-                            className={`m-2 py-1 px-3 rounded-full ${isSelected ? (tech === 'All' ? 'bg-gray-800 text-white' : 'text-white ' + techColor) : 'bg-gray-200 text-black'} transition-colors duration-300`}
-                        >
-                            {tech}
-                        </button>
-                    );
-                })}
+                        // If found, get the tech data
+                        const techData = projectWithTech ? projectWithTech.attributes.project_technologies.data.find(technology => technology.attributes.name === tech) : null;
 
-            </div>
+                        // If tech data is found, get the color, else set a default color
+                        const techColor = techData ? techData.attributes.color : 'bg-gray-200 text-black';
+
+                        return (
+                            <button
+                                key={tech}
+                                onClick={() => setSelectedTechnology(tech)}
+                                className={`m-2 py-1 px-3 rounded-full ${isSelected ? (tech === 'All' ? 'bg-gray-800 text-white' : 'text-white ' + techColor) : 'bg-gray-200 text-black'} transition-colors duration-300`}
+                            >
+                                {tech}
+                            </button>
+                        );
+                    })}
+                </div>
+            )}
 
             <div className='mt-20 flex flex-wrap gap-7'>
                 <AnimatePresence>
