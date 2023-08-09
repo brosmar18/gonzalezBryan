@@ -11,7 +11,8 @@ const ProjectCard = ({
     desc,
     image,
     gitHubLink,
-    liveLink
+    liveLink,
+    techUsed
 }) => {
     return (
         <motion.div
@@ -53,6 +54,9 @@ const ProjectCard = ({
                 <div className='mt-5'>
                     <h3 className='text-white font-bold text-[24px]'>{name}</h3>
                     <p className='mt-2 text-secondary text-[14px]'>{desc}</p>
+                </div>
+                <div>
+                    {techUsed}
                 </div>
             </Tilt>
         </motion.div>
@@ -112,6 +116,7 @@ const Projects = () => {
                                 image={imageUrl}
                                 gitHubLink={project.attributes.gitHubLink}
                                 liveLink={project.attributes.liveLink}
+                                techUsed={project.attributes.techUsed}
                             />
                         );
                     })}
