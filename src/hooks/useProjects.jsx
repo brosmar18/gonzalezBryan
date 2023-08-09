@@ -5,18 +5,14 @@ const useProjects = () => {
 
     async function getProjects() {
         try {
-
-            const response = await fetch('http://localhost:1337/api/projects?populate[image]=true&populate[project_technologies]=true', { method: "GET" });
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/projects?populate[image]=true&populate[project_technologies]=true`, { method: "GET" });
 
             const data = await response.json();
-
-
             setProjects(data.data);
         } catch (e) {
             console.log("Error fetching projects", e);
         }
     }
-
 
     useEffect(() => {
         getProjects();
