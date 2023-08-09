@@ -11,6 +11,10 @@ const ExperienceCard = ({ experience }) => {
   const title = experience.attributes?.title;
   const description = experience.attributes?.description;
 
+  // date logic
+  const startDate = experience.attributes?.startDate;
+  const endDate = experience.attributes?.endDate || experience.attributes?.Present;
+
   // parse description into an array of points
   const points = description.split('\n').map(point => point.replace('-', '').trim());
 
@@ -18,7 +22,7 @@ const ExperienceCard = ({ experience }) => {
     <VerticalTimelineElement
       contentStyle={{ background: "#1d1836", color: "#fff" }}
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={`${experience.attributes?.startingDate} - ${experience.attributes?.endDate}`}
+      date={`${startDate} - ${endDate}`}
       iconStyle={{ background: '#383E56' }}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
@@ -36,13 +40,13 @@ const ExperienceCard = ({ experience }) => {
       </div>
 
       <ul className='mt-5 list-disc ml-5 space-y-2'>
-      {points.map((point, index) => (
-        <li key={`job-point-${index}`} className='text-white-100 text-[14px] pl-1 tracking-wider'>
-          {point}
-        </li>
-      ))}
-    </ul>
-    
+        {points.map((point, index) => (
+          <li key={`job-point-${index}`} className='text-white-100 text-[14px] pl-1 tracking-wider'>
+            {point}
+          </li>
+        ))}
+      </ul>
+
     </VerticalTimelineElement>
   );
 };
@@ -54,6 +58,11 @@ const Experience = () => {
     try {
       const response = await fetch('http://localhost:1337/api/experiences?populate=image', { method: "GET" });
       const data = await response.json();
+
+      const sortedExperiences = data.data.sort((a, b) =>
+        new Date(b.attributes.startDate) - new Date(a.attributes.startDate)  // descending order
+      );
+
       setExperiences(data.data);
       console.log(data.data)
     } catch (error) {
