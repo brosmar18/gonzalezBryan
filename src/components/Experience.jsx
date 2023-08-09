@@ -64,7 +64,6 @@ const Experience = () => {
       );
 
       setExperiences(data.data);
-      console.log(data.data)
     } catch (error) {
       console.log("Error fetching experiences", error);
     }
