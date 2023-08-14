@@ -5,7 +5,7 @@ const useProjects = () => {
 
     async function getProjects() {
         try {
-            const response = await fetch(`http://localhost:1337/api/projects?populate[image]=true&populate[project_technologies]=true`, { method: "GET" });
+            const response = await fetch(`https://gonzalezbryan-server.onrender.com/api/projects?populate[image]=true&populate[project_technologies]=true`, { method: "GET" });
 
             const data = await response.json();
             setProjects(data.data);
