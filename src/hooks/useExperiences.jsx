@@ -5,7 +5,7 @@ const useExperiences = () => {
 
   async function getExperiences() {
     try {
-      const response = await fetch(`http://localhost:1337/api/experiences?populate=image`, { method: "GET" });
+      const response = await fetch(`https://gonzalezbryan-server.onrender.com/api/experiences?populate=image`, { method: "GET" });
       const data = await response.json();
 
       const sortedExperiences = data.data.sort((a, b) =>
